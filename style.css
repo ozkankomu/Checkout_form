@@ -6,8 +6,11 @@
 }
 
 body {
-  height: calc(100vh - 2rem);
+  height: 100vh;
   text-align: center;
+}
+
+.main {
   background-image: url(./img/e-ticaret-poster.webp);
   background-position: center;
   background-repeat: no-repeat;
@@ -16,7 +19,8 @@ body {
 }
 
 h1 {
-  margin: 2rem auto;
+  margin: auto;
+  margin-bottom: 2rem;
   width: 300px;
   background-color: rgb(94, 94, 94);
   color: white;
@@ -28,12 +32,14 @@ h1 {
   justify-content: space-around;
   margin: auto;
   width: 100%;
+  flex-wrap: wrap;
 }
 
 .section1 {
-  background-color: rgba(116, 113, 113, 0.542);
+  background-color: rgba(116, 113, 113, 0.8);
   border-radius: 2rem;
   padding: 1rem;
+  margin-top: 1.5rem;
 }
 
 .box {
@@ -115,7 +121,7 @@ select:focus {
   outline: rgba(255, 255, 255, 0);
 }
 .section2 {
-  background-color: rgba(116, 113, 113, 0.542);
+  background-color: rgba(116, 113, 113, 0.736);
   height: 500px;
   display: flex;
   flex-direction: column;
@@ -123,6 +129,7 @@ select:focus {
   align-items: center;
   padding: 1rem;
   border-radius: 20px;
+  margin-top: 1.5rem;
 }
 
 .fiyat {
@@ -204,6 +211,7 @@ select:active {
 }
 
 .continue {
+  margin: 3rem;
   background-color: #454544;
   padding: 0.5rem;
   border-radius: 15px;

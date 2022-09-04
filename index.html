@@ -12,187 +12,189 @@
     <title>Checkout</title>
   </head>
   <body>
-    <h1>Checkout</h1>
-    <container class="container">
-      <section class="section1">
-        <form action="">
-          <h3>Contact information</h3>
+    <div class="main">
+      <h1>Checkout</h1>
+      <container class="container">
+        <section class="section1">
+          <form action="">
+            <h3>Contact information</h3>
 
-          <div class="box email">
-            <div>
-              <label for="email">Email</label>
-            </div>
-            <div class="flex">
-              <i class="fa-solid fa-envelope"></i>
-              <input
-                type="email"
-                name="email"
-                id="user-email"
-                placeholder="Enter your email...."
-                required
-              />
-            </div>
-          </div>
-
-          <div class="box phone">
-            <div>
-              <label for="phone">Phone</label>
-            </div>
-            <div class="flex">
-              <i class="fa-solid fa-phone"></i>
-              <input
-                type="number"
-                name="phone"
-                id="phone"
-                placeholder="Enteryour phone ..."
-              />
-            </div>
-          </div>
-
-          <div class="shipping">
-            <h3>Shipping adress</h3>
-            <div class="box name">
+            <div class="box email">
               <div>
-                <label for="Full name">Full name</label>
+                <label for="email">Email</label>
               </div>
               <div class="flex">
-                <i class="fa-solid fa-user"></i>
+                <i class="fa-solid fa-envelope"></i>
                 <input
-                  name="Full Name"
-                  type="text"
-                  placeholder="Enter your Full name..."
+                  type="email"
+                  name="email"
+                  id="user-email"
+                  placeholder="Enter your email...."
+                  required
                 />
               </div>
             </div>
 
-            <div class="box adress">
+            <div class="box phone">
               <div>
-                <label for="adress">Address</label>
+                <label for="phone">Phone</label>
               </div>
               <div class="flex">
-                <i class="fa-solid fa-house-chimney"></i>
+                <i class="fa-solid fa-phone"></i>
                 <input
-                  name="adress"
-                  type="text"
-                  placeholder="Enter your address..."
+                  type="number"
+                  name="phone"
+                  id="phone"
+                  placeholder="Enteryour phone ..."
                 />
               </div>
             </div>
 
-            <div class="box city">
-              <div><label for="city">City</label></div>
-              <div class="flex">
-                <i class="fa-solid fa-city"></i>
-                <input
-                  name="City"
-                  type="text"
-                  placeholder="Enter your city..."
-                />
-              </div>
-            </div>
-
-            <div class="country">
-              <div class="box count">
+            <div class="shipping">
+              <h3>Shipping adress</h3>
+              <div class="box name">
                 <div>
-                  <label for="country">Country</label>
+                  <label for="Full name">Full name</label>
                 </div>
                 <div class="flex">
-                  <i class="fa-solid fa-earth-europe"></i>
-                  <select name="country" id="country">
-                    <option value="Turkey">Turkey</option>
-                    <option value="Germany">Germany</option>
-                    <option value="Japan">Japan</option>
-                    <option value="Canada">Canada</option>
-                    <option value="France">France</option>
-                    <option value="Italy">Italy</option>
-                  </select>
-                </div>
-              </div>
-              <div class="box code">
-                <div>
-                  <label for="">Post Code</label>
-                </div>
-                <div class="flex">
-                  <i class="fa-solid fa-envelopes-bulk"></i>
+                  <i class="fa-solid fa-user"></i>
                   <input
-                    name="Postal Code"
-                    type="number"
-                    placeholder="Enter your postal code..."
+                    name="Full Name"
+                    type="text"
+                    placeholder="Enter your Full name..."
                   />
                 </div>
               </div>
+
+              <div class="box adress">
+                <div>
+                  <label for="adress">Address</label>
+                </div>
+                <div class="flex">
+                  <i class="fa-solid fa-house-chimney"></i>
+                  <input
+                    name="adress"
+                    type="text"
+                    placeholder="Enter your address..."
+                  />
+                </div>
+              </div>
+
+              <div class="box city">
+                <div><label for="city">City</label></div>
+                <div class="flex">
+                  <i class="fa-solid fa-city"></i>
+                  <input
+                    name="City"
+                    type="text"
+                    placeholder="Enter your city..."
+                  />
+                </div>
+              </div>
+
+              <div class="country">
+                <div class="box count">
+                  <div>
+                    <label for="country">Country</label>
+                  </div>
+                  <div class="flex">
+                    <i class="fa-solid fa-earth-europe"></i>
+                    <select name="country" id="country">
+                      <option value="Turkey">Turkey</option>
+                      <option value="Germany">Germany</option>
+                      <option value="Japan">Japan</option>
+                      <option value="Canada">Canada</option>
+                      <option value="France">France</option>
+                      <option value="Italy">Italy</option>
+                    </select>
+                  </div>
+                </div>
+                <div class="box code">
+                  <div>
+                    <label for="">Post Code</label>
+                  </div>
+                  <div class="flex">
+                    <i class="fa-solid fa-envelopes-bulk"></i>
+                    <input
+                      name="Postal Code"
+                      type="number"
+                      placeholder="Enter your postal code..."
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="see">
+              <input type="checkbox" name="confirm" id="confirm" />
+              <label for="confirm">See this information next time</label>
+            </div>
+          </form>
+        </section>
+
+        <section class="section2">
+          <div class="img1 img2">
+            <img src="./img/photo1.png" alt="photo1.png" />
+            <div class="text1">
+              <h2>Vintage Backbag</h2>
+              <p>
+                <strong>$54.99</strong> <span><del>$94.99</del></span>
+              </p>
+
+              <div class="plus">
+                <button>
+                  <i
+                    class="fa-solid fa-minus"
+                    style="background-color: rgb(230, 219, 219)"
+                  ></i>
+                </button>
+                <p>1</p>
+                <button>
+                  <i
+                    class="fa-solid fa-plus"
+                    style="background-color: rgb(230, 219, 219)"
+                  ></i>
+                </button>
+              </div>
             </div>
           </div>
-          <div class="see">
-            <input type="checkbox" name="confirm" id="confirm" />
-            <label for="confirm">See this information next time</label>
-          </div>
-        </form>
-      </section>
+          <!-- ikinci resim -->
+          <div class="img1 img3">
+            <img src="./img/photo2.png" alt="photo1.png" />
+            <div class="text1 text2">
+              <h2>Levi Shoes</h2>
+              <p>
+                <strong>$74.99</strong> <span><del>$124.99</del></span>
+              </p>
 
-      <section class="section2">
-        <div class="img1 img2">
-          <img src="./img/photo1.png" alt="photo1.png" />
-          <div class="text1">
-            <h2>Vintage Backbag</h2>
-            <p>
-              <strong>$54.99</strong> <span><del>$94.99</del></span>
-            </p>
-
-            <div class="plus">
-              <button>
-                <i
-                  class="fa-solid fa-minus"
-                  style="background-color: rgb(230, 219, 219)"
-                ></i>
-              </button>
-              <p>1</p>
-              <button>
-                <i
-                  class="fa-solid fa-plus"
-                  style="background-color: rgb(230, 219, 219)"
-                ></i>
-              </button>
+              <div class="plus">
+                <button>
+                  <i
+                    class="fa-solid fa-minus"
+                    style="background-color: rgb(230, 219, 219)"
+                  ></i>
+                </button>
+                <p>1</p>
+                <button>
+                  <i
+                    class="fa-solid fa-plus"
+                    style="background-color: rgb(230, 219, 219)"
+                  ></i>
+                </button>
+              </div>
             </div>
           </div>
-        </div>
-        <!-- ikinci resim -->
-        <div class="img1 img3">
-          <img src="./img/photo2.png" alt="photo1.png" />
-          <div class="text1 text2">
-            <h2>Levi Shoes</h2>
-            <p>
-              <strong>$74.99</strong> <span><del>$124.99</del></span>
-            </p>
 
-            <div class="plus">
-              <button>
-                <i
-                  class="fa-solid fa-minus"
-                  style="background-color: rgb(230, 219, 219)"
-                ></i>
-              </button>
-              <p>1</p>
-              <button>
-                <i
-                  class="fa-solid fa-plus"
-                  style="background-color: rgb(230, 219, 219)"
-                ></i>
-              </button>
-            </div>
+          <div class="fiyat">
+            <p>Shipping</p>
+            <p>$19</p>
           </div>
-        </div>
-
-        <div class="fiyat">
-          <p>Shipping</p>
-          <p>$19</p>
-        </div>
-        <div class="fiyat">
-          <p>Total</p>
-          <p>$148.98</p>
-        </div>
-      </section>
-    </container>
-    <button class="continue">Continue</button>
+          <div class="fiyat">
+            <p>Total</p>
+            <p>$148.98</p>
+          </div>
+        </section>
+      </container>
+      <button class="continue">Continue</button>
+    </div>
   </body>
 </html>
