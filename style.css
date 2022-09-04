@@ -1,0 +1,223 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  color: rgb(255, 255, 255);
+}
+
+body {
+  height: calc(100vh - 2rem);
+  text-align: center;
+  background-image: url(./img/e-ticaret-poster.webp);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  object-fit: cover;
+}
+
+h1 {
+  margin: 2rem auto;
+  width: 300px;
+  background-color: rgb(94, 94, 94);
+  color: white;
+  border-radius: 10px;
+  box-shadow: 2px 2px 5px black;
+}
+.container {
+  display: flex;
+  justify-content: space-around;
+  margin: auto;
+  width: 100%;
+}
+
+.section1 {
+  background-color: rgba(116, 113, 113, 0.542);
+  border-radius: 2rem;
+  padding: 1rem;
+}
+
+.box {
+  /* margin: 10px 0; */
+  width: 400px;
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+form,
+.shipping {
+  display: flex;
+  justify-content: flex-start;
+  flex-direction: column;
+  gap: 1rem;
+  text-align: left;
+}
+
+h3 {
+  margin-top: 2rem;
+}
+
+form i {
+  color: rgb(130, 5, 5);
+  font-size: 1.2rem;
+  padding: 5px;
+}
+::placeholder {
+  color: #fff;
+}
+.country {
+  display: flex;
+  gap: 1rem;
+}
+
+.count {
+  width: max-content;
+}
+
+.code {
+  width: max-content;
+}
+
+.flex {
+  display: flex;
+  gap: 8px;
+  padding: 5px;
+  width: 100%;
+  border: 2px solid rgb(175, 174, 174);
+  border-radius: 5px;
+}
+
+input {
+  border: none;
+  width: 100%;
+  font-size: 1rem;
+  background-color: rgba(255, 255, 255, 0);
+}
+
+input:focus {
+  border: rgba(255, 255, 255, 0);
+  outline: rgba(255, 255, 255, 0);
+}
+
+select {
+  text-align: right;
+  border: none;
+  background-color: rgba(255, 255, 255, 0);
+}
+
+option {
+  background-color: #454544;
+}
+
+select:focus {
+  border: rgba(255, 255, 255, 0);
+  outline: rgba(255, 255, 255, 0);
+}
+.section2 {
+  background-color: rgba(116, 113, 113, 0.542);
+  height: 500px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  padding: 1rem;
+  border-radius: 20px;
+}
+
+.fiyat {
+  display: flex;
+  background-color: inherit;
+}
+
+.img1 {
+  display: flex;
+  margin: 1rem 2rem;
+  width: 100%;
+}
+
+img {
+  width: 140px;
+  height: 150px;
+  border-radius: 20px;
+}
+
+.text1 {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: flex-start;
+  margin-left: 2rem;
+}
+
+.plus {
+  width: 100px;
+  height: 40px;
+  padding: 8px;
+  border: 2px solid rgb(201, 201, 201);
+  display: flex;
+  justify-content: space-between;
+}
+.fa-minus,
+.fa-plus {
+  width: 22px;
+  height: 22px;
+  padding-top: 5px;
+  color: black;
+  border-radius: 3px;
+  cursor: pointer;
+}
+
+.plus button {
+  border: none;
+}
+
+.fiyat {
+  font-size: 1.5rem;
+  display: flex;
+  width: 100%;
+  border-top: 2px solid gray;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+
+strong {
+  color: orange;
+  font-size: 1.5rem;
+}
+
+select:active {
+  border: none;
+  color: black;
+}
+
+.see {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: flex-start;
+  margin: 1rem 0;
+}
+#confirm {
+  width: max-content;
+  margin: 0 10px;
+}
+
+.continue {
+  background-color: #454544;
+  padding: 0.5rem;
+  border-radius: 15px;
+  color: #fff;
+  font-size: 1.1rem;
+  font-weight: 600;
+  border: none;
+  cursor: pointer;
+  box-shadow: 1px 1px 10px grey;
+  outline: 1px solid darkred;
+}
+
+.continue:hover {
+  background-color: darkred;
+  outline: 2px solid darkred;
+  outline-offset: 3px;
+}
