@@ -1,13 +1,18 @@
 const minus = document.querySelectorAll(".fa-minus");
-
-console.log(minus.nextElementSibling);
+const plus = document.querySelectorAll(".fa-plus");
 
 minus.forEach((i) => {
-  console.log(minus);
   i.addEventListener("click", () => {
-    console.log(i.parentElement.nextElementSibling);
     i.parentElement.nextElementSibling.innerText == "0"
       ? alert("ürün bulunmamaktadır")
       : (i.parentElement.nextElementSibling.innerText -= 1);
+  });
+});
+
+plus.forEach((i) => {
+  i.addEventListener("click", () => {
+    i.parentElement.previousElementSibling.innerText = `${
+      Number(i.parentElement.previousElementSibling.innerText) + 1
+    }`;
   });
 });
