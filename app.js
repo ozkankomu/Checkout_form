@@ -3,6 +3,7 @@ const plus = document.querySelectorAll(".fa-plus");
 const remove = document.querySelectorAll(".remove");
 const td = document.querySelectorAll(".td");
 let subtotal = 0;
+let totalsum = 0;
 
 minus.forEach((i) => {
   i.addEventListener("click", () => {
@@ -42,8 +43,10 @@ remove.forEach((i) => {
   });
 });
 
+//* funtionss //////////////////////////////////
+
 function total() {
-  let totalsum = subtotal * 1.18 + 20;
+  !subtotal ? (totalsum = 0) : (totalsum = subtotal * 1.18 + 20);
   document.querySelector(".sum").innerText = totalsum.toFixed(2);
 }
 
