@@ -1,7 +1,8 @@
 const minus = document.querySelectorAll(".fa-minus");
 const plus = document.querySelectorAll(".fa-plus");
 const remove = document.querySelectorAll(".remove");
-const td = document.querySelectorAll("table tr td");
+const td = document.querySelectorAll(".td");
+let subtotal = 0;
 
 minus.forEach((i) => {
   i.addEventListener("click", () => {
@@ -14,6 +15,8 @@ minus.forEach((i) => {
         i.closest("div").children[1].children[0].innerText
       ).toFixed(2)}`;
     });
+    sub();
+    total();
   });
 });
 
@@ -28,6 +31,8 @@ plus.forEach((i) => {
         i.closest("div").children[1].children[0].innerText
       ).toFixed(2)}`;
     });
+    sub();
+    total();
   });
 });
 
@@ -37,14 +42,16 @@ remove.forEach((i) => {
   });
 });
 
-document.querySelector(".section2").addEventListener("click", () => {
-  let sum =
-    Number(document.querySelector(".td1").innerHTML) +
-    Number(document.querySelector(".td2").innerHTML) +
-    Number(document.querySelector(".td3").innerHTML);
-
-  document.querySelector(".subtotal").nextElementSibling.innerText =
-    sum.toFixed(2);
-  let totalsum = sum * 1.18 + 20;
+function total() {
+  let totalsum = subtotal * 1.18 + 20;
   document.querySelector(".sum").innerText = totalsum.toFixed(2);
-});
+}
+
+function sub() {
+  subtotal = 0;
+  td.forEach((i) => {
+    subtotal += Number(i.innerText);
+  });
+  document.querySelector(".subtotal").nextElementSibling.innerText =
+    Number(subtotal).toFixed(2);
+}
