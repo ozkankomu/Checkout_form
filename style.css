@@ -202,6 +202,14 @@ strong {
   font-size: 1.5rem;
 }
 
+strong::before {
+  content: "$ ";
+}
+
+del::before {
+  content: "$ ";
+}
+
 select:active {
   border: none;
   color: black;
@@ -250,10 +258,16 @@ select:active {
 
 .remove:hover {
   transform: scale(1.1);
-  background-color: rgba(255, 0, 0, 0.494);
+  outline: 2px solid darkred;
+  outline-offset: 3px;
+  transition: all ease-in-out 0.3s;
   cursor: pointer;
 }
 
 table {
   font-size: 2.5rm;
+}
+
+table tr td:before {
+  content: "$ ";
 }
