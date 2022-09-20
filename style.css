@@ -17,6 +17,7 @@ body {
   background-size: cover;
   object-fit: cover;
   background-attachment: fixed;
+  height: 100vh;
 }
 
 h1 {
