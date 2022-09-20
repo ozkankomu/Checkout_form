@@ -45,4 +45,6 @@ document.querySelector(".section2").addEventListener("click", () => {
 
   document.querySelector(".subtotal").nextElementSibling.innerText =
     sum.toFixed(2);
+  let totalsum = sum * 1.18 + 20;
+  document.querySelector(".sum").innerText = totalsum.toFixed(2);
 });

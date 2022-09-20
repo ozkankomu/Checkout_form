@@ -271,3 +271,19 @@ table {
 table tr td:before {
   content: "$ ";
 }
+
+.tax:before {
+  content: "%";
+}
+
+.sub::before {
+  content: "$";
+}
+
+.ship::before {
+  content: "$";
+}
+
+.sum:before {
+  content: "$";
+}
