@@ -21,7 +21,7 @@ body {
 
 h1 {
   margin: auto;
-  margin-bottom: 2.5rem;
+  margin-bottom: 1rem;
   width: 300px;
   background-color: rgb(94, 94, 94);
   color: white;
@@ -124,6 +124,7 @@ select:focus {
 .section2 {
   background-color: rgba(116, 113, 113, 0.736);
   height: 800px;
+  width: 450px;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
@@ -273,17 +274,17 @@ table tr td:before {
 }
 
 .tax:before {
-  content: "%";
+  content: "$ ";
 }
 
 .sub::before {
-  content: "$";
+  content: "$ ";
 }
 
 .ship::before {
-  content: "$";
+  content: "$ ";
 }
 
 .sum:before {
-  content: "$";
+  content: "$ ";
 }

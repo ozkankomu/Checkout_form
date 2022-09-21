@@ -1,61 +1,95 @@
-const minus = document.querySelectorAll(".fa-minus");
-const plus = document.querySelectorAll(".fa-plus");
-const remove = document.querySelectorAll(".remove");
-const td = document.querySelectorAll(".td");
-let subtotal = 0;
-let totalsum = 0;
+const taxRate = 0.18;
+const shippingPrice = 20;
+const shippingFreePrice = 300;
 
-minus.forEach((i) => {
-  i.addEventListener("click", () => {
-    i.parentElement.nextElementSibling.innerText == "0"
-      ? alert("Sepetinizde ürün bulunmamaktadır")
-      : (i.parentElement.nextElementSibling.innerText -= 1);
-    td.forEach((i) => {
-      i.innerText = `${(
-        i.closest("div").children[2].children[1].innerText *
-        i.closest("div").children[1].children[0].innerText
-      ).toFixed(2)}`;
-    });
-    sub();
-    total();
-  });
+window.addEventListener("load", () => {
+  calculateCartPrice();
+  //set items to LocalStorage
+  localStorage.setItem("taxRate", taxRate);
+  localStorage.setItem("shippingPrice", shippingPrice);
+  localStorage.setItem("shippingFreePrice", shippingFreePrice);
+
+  //set items to sessionStorage
+  //  sessionStorage.setItem("taxRate", taxRate);
+  //  sessionStorage.setItem("shippingPrice", shippingPrice);
+  //  sessionStorage.setItem("shippingFreePrice", shippingFreePrice);
 });
 
-plus.forEach((i) => {
-  i.addEventListener("click", () => {
-    i.parentElement.previousElementSibling.innerText = `${
-      Number(i.parentElement.previousElementSibling.innerText) + 1
-    }`;
-    td.forEach((i) => {
-      i.innerText = `${(
-        i.closest("div").children[2].children[1].innerText *
-        i.closest("div").children[1].children[0].innerText
-      ).toFixed(2)}`;
-    });
-    sub();
-    total();
-  });
-});
-
-document.querySelector(".section2").addEventListener("click", (e) => {
-  if (e.target.classList.contains("remove")) {
-    e.target.parentElement.parentElement.remove();
-    sub();
-    total();
+const productsDiv = document.querySelector(".section2");
+productsDiv.addEventListener("click", (event) => {
+  if (event.target.className == "fa-solid fa-minus") {
+    console.log("minus btn is clicked!");
+    if (
+      event.target.parentElement.parentElement.querySelector(".adet")
+        .innerText > 1
+    ) {
+      event.target.parentElement.parentElement.querySelector(".adet")
+        .innerText--;
+      calculateProductPrice(event.target);
+      calculateCartPrice();
+    } else {
+      if (
+        confirm(
+          `${
+            event.target.parentElement.parentElement.parentElement.querySelector(
+              "h2"
+            ).innerText
+          } will be deleted. Do you confirm!!!`
+        )
+      ) {
+        //remove
+        event.target.parentElement.parentElement.parentElement.parentElement.remove();
+        calculateCartPrice();
+      }
+    }
+  } else if (event.target.classList.contains("fa-plus")) {
+    console.log("plus btn is clicked!");
+    event.target.parentElement.previousElementSibling.innerText++;
+    calculateProductPrice(event.target);
+    calculateCartPrice();
+  } else if (event.target.className == "remove") {
+    event.target.parentElement.parentElement.remove();
+    calculateCartPrice();
+  } else {
   }
 });
 
-//! funtionss //////////////////////////////////
+const calculateProductPrice = (btn) => {
+  const productInfoDiv = btn.parentElement.parentElement.parentElement;
+  console.log(productInfoDiv);
+  const price = productInfoDiv.querySelector(".strong").innerText;
+  const quantity = productInfoDiv.querySelector(".adet").innerText;
+  const productTotalDiv = productInfoDiv.querySelector(".td");
+  productTotalDiv.innerText = (price * quantity).toFixed(2);
+};
 
-function total() {
-  !subtotal ? (totalsum = 0) : (totalsum = subtotal * 1.18 + 20);
-  document.querySelector(".sum").innerText = totalsum.toFixed(2);
-}
+const calculateCartPrice = () => {
+  const productsTotalPricesDivs = document.querySelectorAll(".td");
+  //foreach ==> NodeList, Array
+  //const productsTotalPricesDivs = [...document.getElementsByClassName("product-line-price")];
 
-function sub() {
-  subtotal = 0;
-  document.querySelectorAll(".td").forEach((i) => {
-    subtotal += Number(i.innerText);
+  let subtotal = 0;
+  productsTotalPricesDivs.forEach((div) => {
+    console.log(div);
+    subtotal += parseFloat(div.innerText);
   });
-  document.querySelector(".sub").innerText = Number(subtotal).toFixed(2);
-}
+  //console.log(subtotal);
+  const taxPrice = subtotal * localStorage.getItem("taxRate");
+
+  const shippingPrice = parseFloat(
+    subtotal > 0 && subtotal < localStorage.getItem("shippingFreePrice")
+      ? localStorage.getItem("shippingPrice")
+      : 0
+  );
+
+  console.log(shippingPrice);
+
+  document.querySelector(".sub").innerText = subtotal.toFixed(2);
+  document.querySelector(".tax").innerText = taxPrice.toFixed(2);
+  document.querySelector(".ship").innerText = shippingPrice.toFixed(2);
+  document.querySelector(".sum").innerText = (
+    subtotal +
+    taxPrice +
+    shippingPrice
+  ).toFixed(2);
+};
