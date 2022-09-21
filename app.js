@@ -37,13 +37,15 @@ plus.forEach((i) => {
   });
 });
 
-remove.forEach((i) => {
-  i.addEventListener("click", () => {
-    i.parentElement.parentElement.remove();
-  });
+document.querySelector(".section2").addEventListener("click", (e) => {
+  if (e.target.classList.contains("remove")) {
+    e.target.parentElement.parentElement.remove();
+    sub();
+    total();
+  }
 });
 
-//* funtionss //////////////////////////////////
+//! funtionss //////////////////////////////////
 
 function total() {
   !subtotal ? (totalsum = 0) : (totalsum = subtotal * 1.18 + 20);
@@ -52,9 +54,8 @@ function total() {
 
 function sub() {
   subtotal = 0;
-  td.forEach((i) => {
+  document.querySelectorAll(".td").forEach((i) => {
     subtotal += Number(i.innerText);
   });
-  document.querySelector(".subtotal").nextElementSibling.innerText =
-    Number(subtotal).toFixed(2);
+  document.querySelector(".sub").innerText = Number(subtotal).toFixed(2);
 }
